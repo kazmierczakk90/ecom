@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "userProfile": {
+      "title": "UserProfile",
+      "description": "User specific data and settings",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "defaultVatSource": { "type": "number" },
+        "defaultVatTarget": { "type": "number" },
+        "exchangeRate": { "type": "number" },
+        "defaultShippingCostEUR": { "type": "number" },
+        "defaultCommissionPercent": { "type": "number" },
+        "useMockSimulation": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "worklist": {
+      "title": "Worklist",
+      "description": "A list of product IDs representing a user custom tab",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "productIds": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "isCustom": { "type": "boolean" },
+        "ownerId": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "productIds", "ownerId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "userProfile",
+      "description": "Primary user configuration and settings document"
+    },
+    "/users/{userId}/worklists/{worklistId}": {
+      "schema": "worklist",
+      "description": "Custom tables/tabs created by the user"
+    }
+  }
+}

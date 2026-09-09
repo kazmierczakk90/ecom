@@ -1,0 +1,6 @@
+{
+  "name": "Product Scout",
+  "description": "Narzędzie do analizy arbitrażu e-commerce pomiędzy Amazon.de a Allegro, umożliwiające wyszukiwanie produktów, kalkulację ROI, opłat, podatków oraz automatyczne kojarzenie ofert przy użyciu AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

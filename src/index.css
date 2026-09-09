@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg-dark: #0F0F12;
+  --color-sidebar-dark: #16161A;
+  --color-card-dark: #1C1C21;
+  --color-border-dark: #2D2D35;
+  --color-brand-blue: #4F46E5;
+  --color-brand-green: #10B981;
+  --color-brand-yellow: #F59E0B;
+  --color-brand-red: #EF4444;
+  --color-brand-purple: #8B5CF6;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-dark);
+    color: #E5E7EB;
+    font-family: var(--font-sans);
+  }
+  
+  /* Custom scrollbar for dense tables */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-dark);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4A5568;
+  }
+}
